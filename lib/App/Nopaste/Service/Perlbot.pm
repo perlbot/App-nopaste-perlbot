@@ -3,9 +3,7 @@ use warnings;
 package App::Nopaste::Service::Perlbot;
 # ABSTRACT: Service provider for perlbot.pl - https://perlbot.pl/
 
-use 5.24.0;
-
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 use parent 'App::Nopaste::Service';
 use JSON qw/decode_json/;
