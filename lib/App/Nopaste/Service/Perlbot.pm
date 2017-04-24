@@ -3,6 +3,8 @@ use warnings;
 package App::Nopaste::Service::Perlbot;
 # ABSTRACT: Service provider for perlbot.pl - https://perlbot.pl/
 
+use 5.24.0;
+
 our $VERSION = '0.001';
 
 use parent 'App::Nopaste::Service';
@@ -24,12 +26,10 @@ sub run {
         my $content = $res->decoded_content;
         my $data = decode_json $content;
 
-        return $data->{url};
+        return (1, $data->{url});
     } else {
-        return "Paste failed";
+        return (0, "Paste failed");
     }
-
-    return $self->return($res);
 }
 
 1;
