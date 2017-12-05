@@ -32,10 +32,10 @@ sub run {
 
       my $res = $ua->post("https://perl.bot/api/v1/paste", {
           paste => $arg{text},
-          description => $arg{desc},
-          username => $arg{nick},
-          chan => $arg{chan},
-          language => $arg{lang}
+          description => $arg{desc} || 'I broke this',
+          username => $arg{nick} || 'Anonymous',
+          $arg{chan} ? (chan => $arg{chan}) : (),
+          language => $arg{lang} || 'text'
       });
 
       if ($res->is_success()) {
