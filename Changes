@@ -1,0 +1,3 @@
+0.003 - Dec 5th 2017
+  * Now use perl.bot
+  * -c list will now list channels
