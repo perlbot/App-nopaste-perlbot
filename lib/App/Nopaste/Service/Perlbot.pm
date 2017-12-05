@@ -6,7 +6,7 @@ package App::Nopaste::Service::Perlbot;
 our $VERSION = '0.004';
 
 use parent 'App::Nopaste::Service';
-use JSON qw/decode_json/;
+use JSON::PP qw/decode_json/;
 
 sub run {
     my ($self, %arg) = @_;
